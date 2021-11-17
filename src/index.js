@@ -3,6 +3,7 @@ const path = require('path')
 const hbs = require('hbs');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 const publicpath = path.join(__dirname, '../public')
 const viewpath = path.join(__dirname, '../templates/views');
@@ -29,9 +30,6 @@ app.get('*', (req, res) => {
   res.send('404 not found')
 })
 
-
-
-
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('server starting')
 })
